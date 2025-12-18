@@ -1,8 +1,8 @@
 class Jdd < Formula
     desc "Navigate successive versions of a JSON object"
     homepage "https://github.com/hcgatewood/jdd"
-    url "https://github.com/hcgatewood/jdd/archive/refs/tags/v0.3.0.tar.gz"
-    sha256 "2761f6755541d4c95d84d2e2d0ea7571185cc00ab34ac2eb0a77c611962bd45f"
+    url "https://github.com/hcgatewood/jdd/archive/refs/tags/v0.4.0.tar.gz"
+    sha256 "fb8eabb4ed043a51c841b8351246b11fd550a2be8264299ed5df4f85c487992d"
 
     depends_on "fx"
     depends_on "fzf"
