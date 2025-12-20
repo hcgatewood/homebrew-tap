@@ -1,9 +1,10 @@
 class Jdd < Formula
     desc "Navigate successive versions of a JSON object"
     homepage "https://github.com/hcgatewood/jdd"
-    url "https://github.com/hcgatewood/jdd/archive/refs/tags/v0.9.0.tar.gz"
-    sha256 "65d49dafc1fff895f5b536cdebc56092362dee2bd40d89b22cd570cd91dfcb99"
+    url "https://github.com/hcgatewood/jdd/archive/refs/tags/v0.11.0.tar.gz"
+    sha256 "30ccc1997feedfbd07e025c9e384d5bc386811e6633c1da1dc69ba291110dbb8"
 
+    depends_on "fswatch"
     depends_on "fx"
     depends_on "fzf"
     depends_on "jaq"
