@@ -6,7 +6,7 @@ class Dotsync < Formula
   url "https://files.pythonhosted.org/packages/09/67/da64263b951157554b3838cb9e3777655b21a50b8487a7b6f93524e9070d/dotsync_fast-0.1.0.tar.gz"
   sha256 "4ba64a8e4e2a58bcf7af69f422c870fb1c1a3748fc61d226a1d97a07525987dd"
 
-  depends_on "python3"
+  depends_on "python@3.12"
   depends_on "pydantic"
 
   resource "annotated-types" do
