@@ -6,9 +6,10 @@ class Dotsync < Formula
   url "https://files.pythonhosted.org/packages/09/67/da64263b951157554b3838cb9e3777655b21a50b8487a7b6f93524e9070d/dotsync_fast-0.1.0.tar.gz"
   sha256 "4ba64a8e4e2a58bcf7af69f422c870fb1c1a3748fc61d226a1d97a07525987dd"
 
+  depends_on "rust" => :build
+  depends_on "maturin" => :build
   depends_on "python@3.12"
   depends_on "pydantic"
-  depends_on "watchfiles"
 
   resource "annotated-types" do
     url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
@@ -60,9 +61,16 @@ class Dotsync < Formula
     sha256 "ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"
   end
 
+  resource "watchfiles" do
+    url "https://files.pythonhosted.org/packages/c2/c9/8869df9b2a2d6c59d79220a4db37679e74f807c559ffe5265e08b227a210/watchfiles-1.1.1.tar.gz"
+    sha256 "a173cb5c16c4f40ab19cecf48a534c409f7ea983ab8fed0741304a1c0a31b3f2"
+  end
+
   def install
     virtualenv_create(libexec, "python3")
-    virtualenv_install_with_resources(using: "python@3.12")
+
+    venv.pip_install resources
+    venv.pip_install_and_link buildpath
   end
 
   test do
