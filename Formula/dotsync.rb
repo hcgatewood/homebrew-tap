@@ -77,7 +77,7 @@ class Dotsync < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3")
+    venv = virtualenv_create(libexec, "python@3.12", system_site_packages: true)
     venv.pip_install resources
     venv.pip_install_and_link buildpath
   end
