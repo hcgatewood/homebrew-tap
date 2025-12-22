@@ -7,6 +7,7 @@ class Dotsync < Formula
   sha256 "4ba64a8e4e2a58bcf7af69f422c870fb1c1a3748fc61d226a1d97a07525987dd"
 
   depends_on "python3"
+  depends_on "pydantic"
 
   resource "annotated-types" do
     url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
@@ -75,7 +76,7 @@ class Dotsync < Formula
 
   def install
     virtualenv_create(libexec, "python3")
-    virtualenv_install_with_resources
+    virtualenv_install_with_resources(using: "python@3.12")
   end
 
   test do
