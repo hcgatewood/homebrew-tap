@@ -8,7 +8,7 @@ class Dotsync < Formula
 
   depends_on "rust" => :build
   depends_on "maturin" => :build
-  depends_on "python@3.12"
+  depends_on "python@3.13"
   depends_on "pydantic"
 
   resource "annotated-types" do
@@ -77,7 +77,7 @@ class Dotsync < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3.12", system_site_packages: true)
+    venv = virtualenv_create(libexec, "python3.13", system_site_packages: true)
     ENV["PIP_USE_PEP517"] = "true"
     venv.pip_install resources
     venv.pip_install_and_link buildpath
